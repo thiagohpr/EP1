@@ -1,16 +1,28 @@
+class cor:
+    vermelho="\033[91m"
+    azul="\033[94m"
+    verde="\033[92m"
+    negrito="\033[1m"
+    fim="\033[0m"
+
+print(cor.vermelho + "JOGO DE CRAPS" + cor.fim)
+
 import random
 import time
+
 craps=True
 fichas=100
 
 while craps:
-    jogo=str(input("Para jogar, digite J \nPara sair do jogo, digite S  "))
+    print ("Você possui", cor.verde +  "{} fichas.".format (fichas) + cor.fim)
+    print ("Para jogar, digite", cor.azul + "J" + cor.fim,"\nPara sair do jogo, digite", cor.vermelho + "S" + cor.fim)
+    jogo=str(input("-"))
     if jogo=="S":
         craps=False
         print ("Obrigado por jogar. Você iniciou o jogo com 100 fichas e saiu dele com {}.".format (fichas))
 
         if fichas>100:
-            print ("Parabéns! Você lucrou {} fichas.".format(fichas-100))
+            print (cor.green + "Parabéns! Você lucrou {} fichas.".format(fichas-100) + cor.fim)
         elif fichas<100:
             print ("Que pena! Infelizmente, voce perdeu {} fichas. :(".format(100-fichas))
         elif fichas==100:
