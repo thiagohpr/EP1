@@ -24,12 +24,12 @@ while craps:
         if fichas>100:
             print (cor.verde + "Parabéns! Você lucrou {} fichas.".format(fichas-100) + cor.fim)
         elif fichas<100:
-            print ("Que pena! Infelizmente, voce perdeu {} fichas. :(".format(100-fichas))
+            print (cor.vermelho + "Que pena! Infelizmente, voce perdeu {} fichas. :(".format(100-fichas) + cor.fim)
         elif fichas==100:
             print ("Parece até que não jogou.")
 
     elif jogo=="J":
-        print ("Fase de Come Out")
+        print (cor.negrito + "Fase de Come Out" + cor.fim)
         dado11=random.randint (1,6)
         dado12=random.randint (1,6)
         soma1=dado11+dado12
@@ -43,9 +43,10 @@ while craps:
         plbc=True
         
         while fiec:
-            fie=int(input("Aposta para Field\nSe não quiser apostar, digite 0.   "))
+            print (cor.azul + "Aposta para Field\nSe não quiser apostar, digite 0.   " + cor.fim)
+            fie=int(input("-"))
             if fie>fichas or fie<0:
-                print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
             elif fie>0:
                 fichas=fichas-fie
                 fiec=False
@@ -54,9 +55,10 @@ while craps:
                 fiec=False
 
         while anyc:
-            any=int(input("Aposta para Any Craps\nSe não quiser apostar, digite 0.   "))
+            print (cor.azul + "Aposta para Any Craps\nSe não quiser apostar, digite 0.   " + cor.fim)
+            any=int(input("-"))
             if any>fichas or any<0:
-                print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
             elif any>0:
                 fichas=fichas-any
                 anyc=False
@@ -65,9 +67,10 @@ while craps:
                 anyc=False
 
         while twec:
-            twe=int(input("Aposta para Twelve\nSe não quiser apostar, digite 0.   "))
+            print (cor.azul + "Aposta para Twelve\nSe não quiser apostar, digite 0.   " + cor.fim)
+            twe=int(input("-"))
             if twe>fichas or twe<0:
-                print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
             elif twe>0:
                 fichas=fichas-twe
                 twec=False
@@ -76,9 +79,10 @@ while craps:
                 twec=False
 
         while plbc:
-            plb=int(input("Aposta para Pass line Bet\nSe não quiser apostar, digite 0.   "))
+            print (cor.azul + "Aposta para Pass line Bet\nSe não quiser apostar, digite 0.   " + cor.fim)
+            plb=int(input("-"))
             if plb>fichas or plb<0:
-                print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
             elif plb>0:
                 fichas=fichas-plb
                 plbc=False
@@ -87,52 +91,52 @@ while craps:
                 plbc=False
 
 
-        print ("Primeiro dado: ")
+        print (cor.negrito + "Primeiro dado: " + cor.fim)
         time.sleep (3)
-        print (dado11)
+        print (cor.verde + "{}".format(dado11) + cor.fim)
         time.sleep (1)
-        print ("Segundo dado: ")
+        print (cor.negrito + "Segundo dado: " + cor.fim)
         time.sleep (3)
-        print (dado12)
+        print (cor.verde + "{}".format(dado12) + cor.fim)
         time.sleep (1)
-        print ("A soma é de {}" .format(soma1))
+        print (cor.verde + "A soma é de {}" .format(soma1) + cor.fim)
 
         if fie>0:
             if soma1==3 or soma1==4 or soma1==9 or soma1==10 or soma1==11:
                 fichas=fichas+2*fie
-                print ("Você recuperou sua aposta e ganhou {} no field.".format (fie))
+                print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (fie) + cor.fim)
             elif soma1==2:
                 fichas=fichas+3*fie
-                print ("Você recuperou sua aposta e ganhou {} no field.".format (2*fie))
+                print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (2*fie) + cor.fim)
             elif soma1==12:
                 fichas=fichas+4*fie
-                print ("Você recuperou sua aposta e ganhou {} no field.".format (3*fie))
+                print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (3*fie) + cor.fim)
             else:
-                print ("Você perdeu no field.")
+                print (cor.vermelho + "Você perdeu no field." + cor.fim)
         time.sleep (2)
         if any>0:
             if soma1==2 or soma1==3 or soma1==12:
                 fichas=fichas+8*any 
-                print ("Craps! Você recuperou sua aposta e ganhou {} no any craps.".format (7*any))
+                print (cor.verde + "Craps! Você recuperou sua aposta e ganhou {} no any craps.".format (7*any) + cor.fim)
             else:
-                print ("Você perdeu no any craps")
+                print (cor.vermelho + "Você perdeu no any craps" + cor.fim)
         time.sleep (2)    
         if twe>0:
             if soma1==12:
                 fichas=fichas+31*twe
-                print ("JACKPOT! Você recuperou sua aposta e ganhou {} no twelve!".format (30*twe))
+                print (cor.negrito + cor.verde +"JACKPOT! Você recuperou sua aposta e ganhou {} no twelve!".format (30*twe) + cor.fim)
             else:
-                print ("Você perdeu no twelve.")
+                print (cor.vermelho + "Você perdeu no twelve." + cor.fim)
         time.sleep (2)
         if plb>0:
             if soma1==7 or soma1==11:
                 fichas=fichas+2*plb
-                print ("Você recuperou sua aposta e ganhou {} no pass line betJ.".format (plb))
+                print (cor.verde + "Você recuperou sua aposta e ganhou {} no pass line bet.".format (plb) + cor.fim)
             elif soma1==2 or soma1==3 or soma1==12:
-                print ("Craps! Você perdeu no pass line bet.")
+                print (cor.vermelho + "Craps! Você perdeu no pass line bet." + cor.fim)
             else:
                 point=soma1
-                print ("Você entrou na fase de Point")
+                print (cor.negrito + "Você entrou na fase de Point" + cor.fim)
                 fasePoint=True
                 while fasePoint:
                     print ("Para sair da fase Point, você precisa conseguir a soma de {}.\nSe a soma for 7, você sai do Point perdendo os {} apostados.".format(point, plb))
@@ -145,9 +149,10 @@ while craps:
                     plbc=True
                     print ("Você possui {} fichas.".format (fichas))
                     while fiec:
-                        fie=int(input("Aposta para Field\nSe não quiser apostar, digite 0.   "))
+                        print (cor.azul + "Aposta para Field\nSe não quiser apostar, digite 0.   " + cor.fim)
+                        fie=int(input("-"))
                         if fie>fichas or fie<0:
-                            print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                            print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
                         elif fie>0:
                             fichas=fichas-fie
                             fiec=False
@@ -156,9 +161,10 @@ while craps:
                             fiec=False
 
                     while anyc:
-                        any=int(input("Aposta para Any Craps\nSe não quiser apostar, digite 0.   "))
+                        print (cor.azul + "Aposta para Any Craps\nSe não quiser apostar, digite 0.   " + cor.fim)
+                        any=int(input("-"))
                         if any>fichas or any<0:
-                            print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                            print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
                         elif any>0:
                             fichas=fichas-any
                             anyc=False
@@ -167,9 +173,10 @@ while craps:
                             anyc=False
 
                     while twec:
-                        twe=int(input("Aposta para Twelve\nSe não quiser apostar, digite 0.   "))
+                        print (cor.azul + "Aposta para Twelve\nSe não quiser apostar, digite 0.   " + cor.fim)
+                        twe=int(input("-"))
                         if twe>fichas or twe<0:
-                            print ("Aposta inválida.\nVocê possui {} fichas".format (fichas))
+                            print (cor.vermelho + "Aposta inválida.\nVocê possui {} fichas".format (fichas) + cor.fim)
                         elif twe>0:
                             fichas=fichas-twe
                             twec=False
@@ -177,42 +184,42 @@ while craps:
                         else:
                             twec=False
 
-                    print ("Primeiro dado: ")
+                    print (cor.negrito + "Primeiro dado: " + cor.fim)
                     time.sleep (3)
-                    print (dado21)
+                    print (cor.verde + "{}".format(dado21) + cor.fim)
                     time.sleep (1)
-                    print ("Segundo dado: ")
+                    print (cor.negrito + "Segundo dado: " + cor.fim)
                     time.sleep (3)
-                    print (dado22)
+                    print (cor.verde + "{}".format(dado22) + cor.fim)
                     time.sleep (1)
-                    print ("A soma é de {}.".format (soma2))
+                    print (cor.verde + "A soma é de {}.".format (soma2) + cor.fim)
 
                     if fie>0:
                         if soma1==3 or soma1==4 or soma1==9 or soma1==10 or soma1==11:
                             fichas=fichas+2*fie
-                            print ("Você recuperou sua aposta e ganhou {} no field.".format (fie))
+                            print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (fie) + cor.fim)
                         elif soma1==2:
                             fichas=fichas+3*fie
-                            print ("Você recuperou sua aposta e ganhou {} no field.".format (2*fie))
+                            print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (2*fie) + cor.fim)
                         elif soma1==12:
                             fichas=fichas+4*fie
-                            print ("Você recuperou sua aposta e ganhou {} no field.".format (3*fie))
+                            print (cor.verde + "Você recuperou sua aposta e ganhou {} no field.".format (3*fie) + cor.fim)
                         else:
-                            print ("Você perdeu no field.")
+                            print (cor.vermelho + "Você perdeu no field." + cor.fim)
                     time.sleep (2)
                     if any>0:
                         if soma1==2 or soma1==3 or soma1==12:
                             fichas=fichas+8*any 
-                            print ("Craps! Você recuperou sua aposta e ganhou {} no any craps.".format (7*any))
+                            print (cor.verde + "Craps! Você recuperou sua aposta e ganhou {} no any craps.".format (7*any) + cor.fim)
                         else:
-                            print ("Você perdeu no any craps")
+                            print (cor.vermelho + "Você perdeu no any craps" + cor.fim)
                     time.sleep (2)
                     if twe>0:
                         if soma1==12:
                             fichas=fichas+31*twe
-                            print ("JACKPOT! Você recuperou sua aposta e ganhou {} no twelve!".format (30*twe))
+                            print (cor.negrito + cor.verde +"JACKPOT! Você recuperou sua aposta e ganhou {} no twelve!".format (30*twe) + cor.fim)
                         else:
-                            print ("Você perdeu no twelve.")
+                            print (cor.vermelho + "Você perdeu no twelve." + cor.fim)
                     
 
                     if soma2==7:
@@ -225,10 +232,10 @@ while craps:
                         fasePoint = False
                     
                     else:
-                        print ("Você não saiu do Point.")
+                        print (cor.negrito + "Você não saiu do Point." + cor.fim)
 
         if fichas==0:
-            print ("Você zerou suas fichas. :(")
+            print (cor.negrito + cor.vermelho + "Você zerou suas fichas. :(" + cor.fim)
             craps=False
 
         
