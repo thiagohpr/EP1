@@ -22,7 +22,7 @@ while craps:
         print ("Obrigado por jogar. Você iniciou o jogo com 100 fichas e saiu dele com {}.".format (fichas))
 
         if fichas>100:
-            print (cor.green + "Parabéns! Você lucrou {} fichas.".format(fichas-100) + cor.fim)
+            print (cor.verde + "Parabéns! Você lucrou {} fichas.".format(fichas-100) + cor.fim)
         elif fichas<100:
             print ("Que pena! Infelizmente, voce perdeu {} fichas. :(".format(100-fichas))
         elif fichas==100:
