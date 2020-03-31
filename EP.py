@@ -4,11 +4,16 @@ class cor:
     verde="\033[92m"
     negrito="\033[1m"
     fim="\033[0m"
-
-print(cor.vermelho + "JOGO DE CRAPS" + cor.fim)
-
 import random
 import time
+print(cor.vermelho + "JOGO DE CRAPS" + cor.fim)
+time.sleep (2)
+print(cor.vermelho + "ATENÇÃO" + cor.fim )
+time.sleep (1)
+print(cor.azul + "É recomendado que se leia o arquivo README.md pois nele contém as regras para este jogo. \nDivirta-se :)" + cor.fim)
+time.sleep (4)
+
+
 
 craps=True
 fichas=100
@@ -20,7 +25,7 @@ while craps:
     if jogo=="S":
         craps=False
         print ("Obrigado por jogar. Você iniciou o jogo com 100 fichas e saiu dele com {}.".format (fichas))
-
+        time.sleep (2)
         if fichas>100:
             print (cor.verde + "Parabéns! Você lucrou {} fichas.".format(fichas-100) + cor.fim)
         elif fichas<100:
@@ -33,9 +38,9 @@ while craps:
         dado11=random.randint (1,6)
         dado12=random.randint (1,6)
         soma1=dado11+dado12
-
+        time.sleep (1)
         print ("Você tem {} fichas.".format (fichas))
-
+        time.sleep (1)
         
         fiec=True
         anyc=True
@@ -53,7 +58,7 @@ while craps:
                 print ("Você agora tem {} fichas.".format (fichas))
             else:
                 fiec=False
-
+        time.sleep (2)
         while anyc:
             print (cor.azul + "Aposta para Any Craps\nSe não quiser apostar, digite 0.   " + cor.fim)
             any=int(input("-"))
@@ -65,7 +70,7 @@ while craps:
                 print ("Você agora tem {} fichas.".format (fichas))
             else:
                 anyc=False
-
+        time.sleep (2)
         while twec:
             print (cor.azul + "Aposta para Twelve\nSe não quiser apostar, digite 0.   " + cor.fim)
             twe=int(input("-"))
@@ -77,7 +82,7 @@ while craps:
                 print ("Você agora tem {} fichas.".format (fichas))
             else:
                 twec=False
-
+        time.sleep (2)
         while plbc:
             print (cor.azul + "Aposta para Pass line Bet\nSe não quiser apostar, digite 0.   " + cor.fim)
             plb=int(input("-"))
@@ -90,7 +95,7 @@ while craps:
             else:
                 plbc=False
 
-
+        time.sleep (1)
         print (cor.negrito + "Primeiro dado: " + cor.fim)
         time.sleep (3)
         print (cor.verde + "{}".format(dado11) + cor.fim)
@@ -100,7 +105,7 @@ while craps:
         print (cor.verde + "{}".format(dado12) + cor.fim)
         time.sleep (1)
         print (cor.verde + "A soma é de {}" .format(soma1) + cor.fim)
-
+        time.sleep (2)
         if fie>0:
             if soma1==3 or soma1==4 or soma1==9 or soma1==10 or soma1==11:
                 fichas=fichas+2*fie
@@ -136,7 +141,9 @@ while craps:
                 print (cor.vermelho + "Craps! Você perdeu no pass line bet." + cor.fim)
             else:
                 point=soma1
+                time.sleep (2)
                 print (cor.negrito + "Você entrou na fase de Point" + cor.fim)
+                time.sleep (2)
                 fasePoint=True
                 while fasePoint:
                     print ("Para sair da fase Point, você precisa conseguir a soma de {}.\nSe a soma for 7, você sai do Point perdendo os {} apostados.".format(point, plb))
@@ -147,7 +154,9 @@ while craps:
                     anyc=True
                     twec=True
                     plbc=True
+                    time.sleep (2)
                     print ("Você possui {} fichas.".format (fichas))
+                    time.sleep (2)
                     while fiec:
                         print (cor.azul + "Aposta para Field\nSe não quiser apostar, digite 0.   " + cor.fim)
                         fie=int(input("-"))
@@ -159,7 +168,7 @@ while craps:
                             print ("Você agora tem {} fichas.".format (fichas))
                         else:
                             fiec=False
-
+                    time.sleep (2)
                     while anyc:
                         print (cor.azul + "Aposta para Any Craps\nSe não quiser apostar, digite 0.   " + cor.fim)
                         any=int(input("-"))
@@ -171,7 +180,7 @@ while craps:
                             print ("Você agora tem {} fichas.".format (fichas))
                         else:
                             anyc=False
-
+                    time.sleep (2)
                     while twec:
                         print (cor.azul + "Aposta para Twelve\nSe não quiser apostar, digite 0.   " + cor.fim)
                         twe=int(input("-"))
@@ -183,7 +192,7 @@ while craps:
                             print ("Você agora tem {} fichas.".format (fichas))
                         else:
                             twec=False
-
+                    time.sleep (2)
                     print (cor.negrito + "Primeiro dado: " + cor.fim)
                     time.sleep (3)
                     print (cor.verde + "{}".format(dado21) + cor.fim)
@@ -193,7 +202,7 @@ while craps:
                     print (cor.verde + "{}".format(dado22) + cor.fim)
                     time.sleep (1)
                     print (cor.verde + "A soma é de {}.".format (soma2) + cor.fim)
-
+                    time.sleep (1)
                     if fie>0:
                         if soma1==3 or soma1==4 or soma1==9 or soma1==10 or soma1==11:
                             fichas=fichas+2*fie
@@ -220,7 +229,7 @@ while craps:
                             print (cor.negrito + cor.verde +"JACKPOT! Você recuperou sua aposta e ganhou {} no twelve!".format (30*twe) + cor.fim)
                         else:
                             print (cor.vermelho + "Você perdeu no twelve." + cor.fim)
-                    
+                    time.sleep (2)
 
                     if soma2==7:
                         print ("Você perdeu as {} fichas apostadas no pass line bet e saiu do Point.".format (plb))
@@ -235,6 +244,7 @@ while craps:
                         print (cor.negrito + "Você não saiu do Point." + cor.fim)
 
         if fichas==0:
+            time.sleep (1)
             print (cor.negrito + cor.vermelho + "Você zerou suas fichas. :(" + cor.fim)
             craps=False
 
