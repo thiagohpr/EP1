@@ -156,15 +156,20 @@ while craps:
                     dado21=random.randint(1,6)
                     dado22=random.randint(1,6)
                     soma2=dado21+dado22
-                    fiec=True
-                    anyc=True
-                    twec=True
-                    plbc=True
+                    fie=0
+                    any=0
+                    twe=0
+                    if fichas==0:
+                        print ("Você não possui mais fichas para apostar.")
+                    else:
+                        fiec=True
+                        time.sleep (2)
+                        print ("Você possui {} fichas.".format (fichas))
+                        time.sleep (2)
+                    
                     #para criar a segunda fase do jogo, nós basicamente reutilizamos a primeira fase e adcionamos o revéz de ficar preso dentro da Point,
                     #tanto que se observar o código de ambos é bem parecido
-                    time.sleep (2)
-                    print ("Você possui {} fichas.".format (fichas))
-                    time.sleep (2)
+                   
                     while fiec:
                         print (cor.azul + "Aposta para Field\nSe não quiser apostar, digite 0.   " + cor.fim)
                         fie=int(input("-"))
@@ -174,8 +179,14 @@ while craps:
                             fichas=fichas-fie
                             fiec=False
                             print ("Você agora tem {} fichas.".format (fichas))
+                            if fichas==0:
+                                print ("Você não possui mais fichas para apostar.")
+                            else:
+                                anyc=True
+
                         else:
                             fiec=False
+                            anyc=True
                     time.sleep (2)
                     while anyc:
                         print (cor.azul + "Aposta para Any Craps\nSe não quiser apostar, digite 0.   " + cor.fim)
@@ -186,8 +197,13 @@ while craps:
                             fichas=fichas-any
                             anyc=False
                             print ("Você agora tem {} fichas.".format (fichas))
+                            if fichas==0:
+                                print ("Você não possui fichas para apostar.")
+                            else:
+                                twec=True
                         else:
                             anyc=False
+                            twec=True
                     time.sleep (2)
                     while twec:
                         print (cor.azul + "Aposta para Twelve\nSe não quiser apostar, digite 0.   " + cor.fim)
@@ -198,6 +214,7 @@ while craps:
                             fichas=fichas-twe
                             twec=False
                             print ("Você agora tem {} fichas.".format (fichas))
+                            
                         else:
                             twec=False
                     time.sleep (2)
