@@ -1,5 +1,5 @@
 #Este é o codigo completo criado para rodar o jogo de Craps
-#As 9 primeiras linhas mostram algumas definições de bibliotecas e classes que usamos para aperfeiçoar tanto a performance quanto a estetica do código
+#As 9 primeiras linhas mostram algumas definições de bibliotecas e classes que usamos para aperfeiçoar tanto a performance quanto a estética do código
 class cor:
     vermelho="\033[91m"
     azul="\033[94m"
@@ -9,21 +9,16 @@ class cor:
 import random
 import time
 
-#Aqui o jogo se inicia com o titulo. Vai ser possivel observar diversos time.sleep no codigo inteiro, função que utilizamos para deixar o jogo mais natural e menos crû
+#Aqui o jogo se inicia com o título. Vai ser possível observar diversos time.sleep no código inteiro, função que utilizamos para deixar o jogo mais natural e menos crú
 
 print(cor.vermelho + "JOGO DE CRAPS" + cor.fim)
-
 time.sleep (2)
-   
 print(cor.vermelho + "ATENÇÃO" + cor.fim )
-
 time.sleep (1)
-
 print(cor.azul + "É recomendado que se leia o arquivo README.md pois nele contém as regras para este jogo. \nDivirta-se :)" + cor.fim)
-
 time.sleep (4)
 
-#Leia o README para ver as nossas regras Andrew
+#Leia o README para ver as nossas regras 
 
 
 craps=True
@@ -121,25 +116,15 @@ while craps:
     #quando se espera os resultados dos dados.
         
         time.sleep (1)
-        
         print (cor.negrito + "Primeiro dado: " + cor.fim)
-        
         time.sleep (3)
-        
         print (cor.verde + "{}".format(dado11) + cor.fim)
-        
         time.sleep (1)
-        
         print (cor.negrito + "Segundo dado: " + cor.fim)
-        
         time.sleep (3)
-        
         print (cor.verde + "{}".format(dado12) + cor.fim)
-        
         time.sleep (1)
-        
         print (cor.verde + "A soma é de {}" .format(soma1) + cor.fim)
-        
         time.sleep (2)
         
         if fie>0:
@@ -220,7 +205,6 @@ while craps:
                                 print ("Você não possui mais fichas para apostar.")
                             else:
                                 anyc=True
-
                         else:
                             fiec=False
                             anyc=True
@@ -254,31 +238,20 @@ while craps:
                         elif twe>0:
                             fichas=fichas-twe
                             twec=False
-                            print ("Você agora tem {} fichas.".format (fichas))
-                            
+                            print ("Você agora tem {} fichas.".format (fichas)) 
                         else:
                             twec=False
                     
                     time.sleep (2)
-                    
                     print (cor.negrito + "Primeiro dado: " + cor.fim)
-                    
                     time.sleep (3)
-                    
                     print (cor.verde + "{}".format(dado21) + cor.fim)
-                    
                     time.sleep (1)
-                    
                     print (cor.negrito + "Segundo dado: " + cor.fim)
-                    
                     time.sleep (3)
-                    
                     print (cor.verde + "{}".format(dado22) + cor.fim)
-                    
                     time.sleep (1)
-                    
                     print (cor.verde + "A soma é de {}.".format (soma2) + cor.fim)
-                    
                     time.sleep (1)
                     #Nossa regra de manter o jogador preso na Point mesmo zerado foi proposital
                    
