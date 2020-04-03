@@ -1,4 +1,5 @@
-# EP
+# EP 
+                                                    CRAPS BY FABRIZIO MILAN & THIAGO ROCHA
 O Programa EP.py se trata de um jogo que simula uma mesa de Craps, este que é um jogo de dados onde o participante aposta o resultado da soma de dois dados jogados na mesa, com tipos de apostas e maneiras de lucrar fichas diferentes. Você começará o jogo com 100 fichas e pode apostar o quanto quiser até você zerar as suas fichas(final triste) ou sair do jogo com mais fichas do que começou (final feliz).
 REGRAS DO JOGO:
     O jogo é dividido em duas fases: o Come Out e o Point. No Come Out o jogador receberá a opção de invesitr em 4 opções de apostas diferentes, sendo elas a "field", a "any craps", a "twelve" e a "pass line bet", e o jogador pode escolher quanto ele quer apostar em cada uma das apostas ou até mesmo não apostar nada em alguma das opções.
